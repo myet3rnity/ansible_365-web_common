@@ -1,0 +1,8 @@
+---
+- name: Replace /root/.bashrc
+  ansible.builtin.copy:
+    src: bashrc
+    dest: /root/.bashrc
+    owner: root
+    group: root
+    mode: 0640

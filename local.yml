@@ -5,6 +5,7 @@
   roles:
     - roles/arpwatch
     - roles/atop
+    - roles/bash
     - roles/bind-utils
     - roles/chrony
     - roles/curl
