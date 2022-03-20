@@ -1,0 +1,3 @@
+---
+- name: Install ansible ansible.posix collection localy
+  ansible.builtin.shell: ansible-galaxy collection install ansible.posix

@@ -3,6 +3,7 @@
   connection: local
   become: true
   roles:
+    - roles/requirements
     - roles/arpwatch
     - roles/atop
     - roles/bind-utils
