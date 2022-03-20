@@ -1,4 +1,4 @@
-# ansible_365-web_common
+# ansible pull 365-web common
 
 ## Requirements - Almalinux 8
 
