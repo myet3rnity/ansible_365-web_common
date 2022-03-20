@@ -23,3 +23,7 @@ Test ssh connection:
 Run deployment:
 
     ansible-pull -U git@github.com:myet3rnity/ansible_365-web_common.git -i hosts
+
+After deployment, add management IPs:
+
+    firewall-cmd --permanent --ipset=management --add-entry=1.2.3.4 && systemctl reload firewalld
