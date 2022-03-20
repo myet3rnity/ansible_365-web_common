@@ -1,8 +1,16 @@
 ---
-- name: Replace /root/.bashrc
+- name: Replace .bashrc for user root
   ansible.builtin.copy:
-    src: bashrc
+    src: root/bashrc
     dest: /root/.bashrc
     owner: root
     group: root
     mode: 0640
+
+- name: Replace skel .bashrc
+  ansible.builtin.copy:
+    src: skel/bashrc
+    dest: /etc/skel/.bashrc
+    owner: root
+    group: root
+    mode: 0644
