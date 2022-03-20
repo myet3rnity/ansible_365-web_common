@@ -2,13 +2,9 @@
 
 ## Requirements - Almalinux 8
 
-Install git and epel-release:
+Install git, epel-release and Ansible:
 
-    sudo dnf install git epel-release -y
-      
-Install ansible:
-
-    sudo dnf install ansible -y
+    sudo dnf install git epel-release -y && sudo dnf install ansible -y
 
 Install Ansible collection ansible.posix:
 
