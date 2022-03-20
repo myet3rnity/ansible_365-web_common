@@ -17,12 +17,16 @@
 #  when: create_ipset_result is defined
 
 vars_prompt:
+  - name: test
+    prompt: Management IP?
+    when: create_ipset_result is defined
+
+tasks:
   - name: Print a message
     ansible.builtin.debug:
       msg: 'Logging in as {{ test }}'
     when: test is defined
 
-tasks:
 #- name: Create ipset management
 #  shell: "firewall-cmd --permanent --ipset=management --add-entry={{ item }}"
 #  with_items: "{{ management_source_ip }}"
