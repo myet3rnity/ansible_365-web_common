@@ -1,0 +1,5 @@
+---
+- name: Install iftop
+  ansible.builtin.dnf:
+    name: iftop
+    state: present

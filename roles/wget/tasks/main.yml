@@ -1,0 +1,5 @@
+---
+- name: Install wget
+  ansible.builtin.dnf:
+    name: wget
+    state: present

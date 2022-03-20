@@ -1,0 +1,5 @@
+---
+- name: Install sudo
+  ansible.builtin.dnf:
+    name: sudo
+    state: present

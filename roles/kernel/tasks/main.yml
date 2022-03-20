@@ -1,0 +1,66 @@
+---
+- name: Restrict unprivileged users from using dmesg (dmesg_restrict)
+  ansible.posix.sysctl:
+    name: kernel.dmesg_restrict
+    value: '1'
+    sysctl_set: true
+
+- name: Restrict exposing kernel addresses (kptr_restrict)
+  ansible.posix.sysctl:
+    name: kernel.kptr_restrict
+    value: '2'
+    sysctl_set: true
+
+- name: Disable Linux Magic System Request (sysrq)
+  ansible.posix.sysctl:
+    name: kernel.sysrq
+    value: '0'
+    sysctl_set: true
+
+- name: Disabe IPv4 redirection acceptance (all.accept_redirects)
+  ansible.posix.sysctl:
+    name: net.ipv4.conf.all.accept_redirects
+    value: '0'
+    sysctl_set: true
+
+- name: Disabe IPv4 redirection acceptance (default.accept_redirects)
+  ansible.posix.sysctl:
+    name: net.ipv4.conf.default.accept_redirects
+    value: '0'
+    sysctl_set: true
+
+- name: Disabe IPv4 SRR acceptance (default.accept_source_route)
+  ansible.posix.sysctl:
+    name: net.ipv4.conf.default.accept_source_route
+    value: '0'
+    sysctl_set: true
+
+- name: Enable logging of Martian packets (all.log_martians)
+  ansible.posix.sysctl:
+    name: net.ipv4.conf.all.log_martians
+    value: '1'
+    sysctl_set: true
+
+- name: Enable logging of Martian packets (default.log_martians)
+  ansible.posix.sysctl:
+    name: net.ipv4.conf.default.log_martians
+    value: '1'
+    sysctl_set: true
+
+- name: Disabe sending of IPv4 redirects (send_redirects)
+  ansible.posix.sysctl:
+    name: net.ipv4.conf.all.send_redirects
+    value: '0'
+    sysctl_set: true
+
+- name: Disabe IPv6 redirection acceptance (all.accept_redirects)
+  ansible.posix.sysctl:
+    name: net.ipv6.conf.all.accept_redirects
+    value: '0'
+    sysctl_set: true
+
+- name: Disabe IPv6 redirection acceptance (default.accept_redirects)
+  ansible.posix.sysctl:
+    name: net.ipv6.conf.default.accept_redirects
+    value: '0'
+    sysctl_set: true

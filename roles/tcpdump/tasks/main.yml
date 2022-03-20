@@ -1,0 +1,5 @@
+---
+- name: Install tcpdump
+  ansible.builtin.dnf:
+    name: tcpdump
+    state: present

@@ -1,0 +1,5 @@
+---
+- name: Install strace
+  ansible.builtin.dnf:
+    name: strace
+    state: present

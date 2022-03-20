@@ -1,0 +1,29 @@
+---
+- hosts: 365_web_common
+  connection: local
+  become: true
+  roles:
+    - roles/arpwatch
+    - roles/atop
+    - roles/bind-utils
+    - roles/chrony
+    - roles/curl
+    - roles/epel
+    - roles/git
+    - roles/htop
+    - roles/iftop
+    - roles/iotop
+    - roles/kernel
+    - roles/login
+    - roles/ncdu
+    - roles/net_tools
+    - roles/screen
+    - roles/ssh
+    - roles/strace
+    - roles/tcpdump
+    - roles/telnet
+    - roles/traceroute
+    - roles/vim
+    - roles/wget
+    - roles/sudo
+    - roles/user

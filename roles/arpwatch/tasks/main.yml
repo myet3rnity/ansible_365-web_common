@@ -1,0 +1,11 @@
+---
+- name: Install arpwatch
+  ansible.builtin.dnf:
+    name: arpwatch
+    state: present
+
+- name: Enable and start arpwatch service
+  ansible.builtin.systemd:
+    name: arpwatch
+    enabled: true
+    state: started

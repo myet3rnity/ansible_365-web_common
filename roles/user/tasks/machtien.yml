@@ -1,0 +1,22 @@
+- name: create user machtien
+  ansible.builtin.user:
+    name: machtien
+
+- name: set authorized key for user machtien
+  ansible.posix.authorized_key:
+    user: machtien
+    state: present
+    key: "{{ lookup('file', 'files/public_keys/machtien/id_rsa.pub') }}"
+
+- name: add user machtien to sudoers
+  ansible.builtin.template:
+    src: sudoers/machtien.j2 
+    dest: /etc/sudoers.d/machtien
+
+- name: Replace .bashrc
+  ansible.builtin.copy:
+    src: bashrc
+    dest: /home/machtien/.bashrc
+    owner: machtien
+    group: machtien
+    mode: 0640

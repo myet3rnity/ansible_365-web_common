@@ -1,0 +1,5 @@
+---
+- name: Install iotop
+  ansible.builtin.dnf:
+    name: iotop
+    state: present

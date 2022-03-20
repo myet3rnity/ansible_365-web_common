@@ -1,0 +1,5 @@
+---
+- name: Install net-tools
+  ansible.builtin.dnf:
+    name: net-tools
+    state: present

@@ -1,0 +1,16 @@
+---
+- name: Replace issue
+  ansible.builtin.copy:
+    src: issue
+    dest: /etc/issue
+    owner: root
+    group: root
+    mode: 0640
+
+- name: Replace issue.net
+  ansible.builtin.copy:
+    src: issue.net
+    dest: /etc/issue.net
+    owner: root
+    group: root
+    mode: 0640

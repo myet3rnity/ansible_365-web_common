@@ -1,0 +1,5 @@
+---
+- name: Install atop
+  ansible.builtin.dnf:
+    name: atop
+    state: present
