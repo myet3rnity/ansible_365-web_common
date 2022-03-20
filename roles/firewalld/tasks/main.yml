@@ -8,7 +8,7 @@
 - name: Create ipset management
   shell: firewall-cmd --permanent --new-ipset=management --type=hash:net
   register: create_ipset_result
-  failed_when: diff_cmd.rc != 0 and diff_cmd.rc != 26
+  failed_when: create_ipset_result.rc != 0 and create_ipset_result.rc != 26
 
 - name: test
   prompt: Management IP?
