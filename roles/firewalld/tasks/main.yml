@@ -18,6 +18,7 @@
     zone: public
     permanent: yes
     state: enabled
+  notify: restart firewalld
 
 - name: Close service cockpit for zone public
   firewalld: 
@@ -25,6 +26,7 @@
     permanent: true 
     zone: public
     state: disabled
+  notify: restart firewalld
 
 - name: Close service ssh for zone public
   firewalld: 
@@ -32,9 +34,4 @@
     permanent: true 
     zone: public
     state: disabled
-
-- name: Restart and enable service firewalld
-  service:
-    name: firewalld
-    enabled: yes
-    state: restarted
+  notify: restart firewalld
