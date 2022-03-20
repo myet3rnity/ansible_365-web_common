@@ -2,13 +2,9 @@
 
 ## Requirements - Almalinux 8
 
-Install git and epel-release:
+Install git, epel-release and ansible:
 
-    sudo dnf install git epel-release -y
-      
-Install ansible:
-
-    sudo dnf install ansible -y
+    sudo dnf install git epel-release -y && sudo dnf install ansible -y
 
 Install Ansible collection ansible.posix:
 
@@ -16,11 +12,7 @@ Install Ansible collection ansible.posix:
 
 Generating a new SSH key:
 
-    ssh-keygen -t ed25519
-
-Show public key:
-
-    cat ~/.ssh/id_ed25519.pub
+    ssh-keygen -t ed25519 && cat ~/.ssh/id_ed25519.pub
 
 Test ssh connection:
 
