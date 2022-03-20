@@ -26,4 +26,4 @@ Run deployment:
 
 After deployment, add management IPs:
 
-    firewall-cmd --permanent --ipset=management --add-entry=1.2.3.4
+    firewall-cmd --permanent --ipset=management --add-entry=1.2.3.4 && systemctl reload firewalld
