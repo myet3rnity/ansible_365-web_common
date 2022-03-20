@@ -1,6 +1,6 @@
 # ansible_365-web_common
 
-# Requirements - Almalinux 8
+## Requirements - Almalinux 8
 
 Install git and epel-release:
 
@@ -26,7 +26,7 @@ Test ssh connection:
 
     ssh git@github.com
 
-# Deployment
+## Deployment
 
 Run deployment:
 
