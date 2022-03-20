@@ -6,11 +6,11 @@
       - ipset
 
 - name: Create ipset management
-  shell: firewall-cmd --permanent --new-ipset=management --type=hash:net
+  ansible.builtin.shell: firewall-cmd --permanent --new-ipset=management --type=hash:net
   register: create_ipset_result
   failed_when:
-    - create_ipset_result.rc != 0
-    - create_ipset_result.rc != 26
+    - "create_ipset_result.rc != 0"
+    - "create_ipset_result.rc != 26"
 
 - name: test
   prompt: Management IP?
