@@ -16,21 +16,23 @@
 #  prompt: Management IP?
 #  when: create_ipset_result is defined
 
-- name: Print a message
-  ansible.builtin.debug:
-    msg: 'Logging in as {{ test }}'
-  when: test is defined
+vars_prompt:
+  - name: Print a message
+    ansible.builtin.debug:
+      msg: 'Logging in as {{ test }}'
+    when: test is defined
 
+tasks:
 #- name: Create ipset management
 #  shell: "firewall-cmd --permanent --ipset=management --add-entry={{ item }}"
 #  with_items: "{{ management_source_ip }}"
 #
-- name: Create rich rule service SSH for ipset management
-  ansible.posix.firewalld:
-    rich_rule: rule source ipset="management" service name="ssh" accept
-    zone: public
-    permanent: yes
-    state: enabled
+  - name: Create rich rule service SSH for ipset management
+    ansible.posix.firewalld:
+      rich_rule: rule source ipset="management" service name="ssh" accept
+      zone: public
+      permanent: yes
+      state: enabled
 
 - name: Close service cockpit for zone public
   firewalld: 
