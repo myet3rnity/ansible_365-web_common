@@ -12,9 +12,9 @@
     - "create_ipset_result.rc != 0"
     - "create_ipset_result.rc != 26"
 
-- name: test
-  prompt: Management IP?
-  when: create_ipset_result is defined
+#- name: test
+#  prompt: Management IP?
+#  when: create_ipset_result is defined
 
 - name: Print a message
   ansible.builtin.debug:
