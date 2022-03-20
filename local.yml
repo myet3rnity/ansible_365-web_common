@@ -10,6 +10,7 @@
     - roles/chrony
     - roles/curl
     - roles/epel
+    - roles/firewalld
     - roles/git
     - roles/htop
     - roles/iftop
