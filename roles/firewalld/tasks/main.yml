@@ -1,0 +1,45 @@
+---
+- name: Install firewalld and ipset
+  dnf:
+    name:
+      - firewalld
+      - ipset
+
+- name: Create ipset management
+  shell: firewall-cmd --permanent --new-ipset=management --type=hash:net
+  when: management_source_ip|length > 0
+
+- name: Create ipset management
+  shell: "firewall-cmd --permanent --ipset=management --add-entry={{ item }}"
+  with_items: "{{ management_source_ip }}"
+  when: management_source_ip|length > 0
+
+- name: Create rich rule service SSH for ipset management
+  ansible.posix.firewalld:
+    rich_rule: rule source ipset="management" service name="ssh" accept
+    zone: public
+    permanent: yes
+    state: enabled
+  when: management_source_ip|length > 0
+
+- name: Close service cockpit for zone public
+  firewalld: 
+    service: cockpit
+    permanent: true 
+    zone: public
+    state: disabled
+  when: management_source_ip|length > 0
+
+- name: Close service ssh for zone public
+  firewalld: 
+    service: ssh
+    permanent: true 
+    zone: public
+    state: disabled
+  when: management_source_ip|length > 0
+
+- name: Restart and enable service firewalld
+  service:
+    name: firewalld
+    enabled: yes
+    state: restarted
