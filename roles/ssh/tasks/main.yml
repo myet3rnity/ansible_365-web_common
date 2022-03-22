@@ -6,3 +6,11 @@
     line: "PermitRootLogin no"
     state: present
   notify: restart sshd
+
+- name: Set MaxAuthTries to 2
+  ansible.builtin.lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: '^MaxAuthTries'
+    line: "MaxAuthTries 2"
+    state: present
+  notify: restart sshd
