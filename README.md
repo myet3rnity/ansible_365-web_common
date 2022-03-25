@@ -1,4 +1,8 @@
-# ansible pull 365-web common
+365-web common (Ansible pull)
+===================
+
+Requirements
+------------
 
 ## Requirements - Almalinux 8
 
@@ -18,7 +22,14 @@ Test ssh connection:
 
     ssh git@github.com
 
-## Deployment
+Role Variables
+--------------
+
+Dependencies
+------------
+
+Example Playbook
+----------------
 
 Run deployment:
 
@@ -27,3 +38,7 @@ Run deployment:
 After deployment, add management IPs:
 
     firewall-cmd --permanent --ipset=management --add-entry=1.2.3.4 && systemctl reload firewalld
+
+License
+-------
+github:Myet3rnity
