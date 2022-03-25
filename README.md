@@ -1,6 +1,8 @@
 365-web common (Ansible pull)
 ===================
 
+This Common Ansible Role will install and configure applications and settings which every 365-web system needs.
+
 Requirements
 ------------
 
@@ -24,6 +26,9 @@ Test ssh connection:
 
 Role Variables
 --------------
+
+# 365-web_common.chrony - Chrony public servers from the pool.ntp.org project.
+chrony_pool_hostnames:
 
 Dependencies
 ------------
