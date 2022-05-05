@@ -14,3 +14,11 @@
     line: "MaxAuthTries 2"
     state: present
   notify: restart sshd
+
+- name: Set banner to /etc/issue.net
+  ansible.builtin.lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: '^#Banner none'
+    line: "Banner /etc/issue.net"
+    state: present
+  notify: restart sshd
